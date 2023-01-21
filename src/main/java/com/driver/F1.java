@@ -7,6 +7,7 @@ public class F1 extends Car {
         //Use arbitrary values for parameters which are not mentioned
         super(name,4,4,6,isManual,"automatic",4);
 
+
     }
 
 
@@ -23,7 +24,7 @@ public class F1 extends Car {
          * speed more than 250: gear 6
          */
 
-        if(newSpeed <= 0) {
+        if(newSpeed == 0) {
             //Stop the car, set gear as 1
             stop();
             changeGear(1);
@@ -32,6 +33,7 @@ public class F1 extends Car {
 
         if(newSpeed > 0) {
             changeSpeed(newSpeed, getCurrentDirection());
+            changeGear(1);
         }
 
         else if(newSpeed>=1 && newSpeed<=50){changeGear(1);}
